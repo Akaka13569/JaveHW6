@@ -1,0 +1,24 @@
+//------------------Q08--------------------------
+package CH06;
+
+public class CH06_8 extends MyRectangle {
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this.width==width && this.depth==depth) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+		return 0;
+	}
+	
+	public static void main(String[] args) {
+		 
+		
+	}
+}
