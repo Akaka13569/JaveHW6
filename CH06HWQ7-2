@@ -1,0 +1,16 @@
+package CH06;
+
+public class MyRectangleMain {
+
+	public static void main(String[] args) {
+		MyRectangle R1 = new MyRectangle();//利用預設建構子產生物件R1
+		R1.width = 20;//給物件R1 width屬性的值
+		R1.depth = 10;//給物件R1 depth屬性的值
+		System.out.println(R1.getArea());//帶入方法getArea計算
+		System.out.println("----------------------");
+		
+		MyRectangle R2 = new MyRectangle( 20, 10);//利用建構子MyRectangle(double width, double depth)給值
+		System.out.println(R2.getArea());////帶入方法getArea計算
+	}
+
+}
