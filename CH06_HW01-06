@@ -1,0 +1,181 @@
+package CH06;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class CH06_HW {
+
+ //------------Q1----------------------------
+//	public static void main(String[] args) {
+//		starSquare star=new starSquare();
+//		
+//		star.starSquare( 6, 20);
+//	}
+//}
+//
+//class starSquare {
+//	void starSquare(int width,int height) {
+//		for(int x = 0; x < width; x++) {
+//			for(int y = 0; y < height; y++) {
+//				System.out.print("*");
+//			}
+//			System.out.println("");
+//		}
+//	}
+
+	
+
+	//------------Q2----------------------------
+//	public static void main(String[] args) {
+//		factorial fact = new factorial();
+//
+//		System.out.println(fact.factorial(5));
+//	}
+//}
+//
+//class factorial {
+//	long factorial(int n) {
+//		int sum = 1, x = 1;
+//		while (x <= n) {
+//			sum = sum * x;
+//			x = x + 1;
+//
+//		}
+//		return sum;
+//	}
+
+	
+
+	 //------------------Q3--------------------------
+
+//	public static void main(String[] args) {
+//		int a1[] = { 5, 7, 8, 9, 1, 3 };
+//		mySort my = new mySort();
+//
+//		my.mySort(a1);
+//
+//	}
+//}
+//
+//class mySort {
+//	int[] mySort(int[] arrayInt) {
+//
+//		int[] a = arrayInt;
+//		Arrays.sort(a);
+//		for (int x : a) {
+//			System.out.print(x);
+//		}
+//
+//		return arrayInt;
+//	}
+//}
+
+	
+
+	 //------------Q4----------------------------
+//	 public static void main(String[] args) {
+//		luckyNumbers luck = new luckyNumbers();
+//
+//		int[] a = luck.luckyNumbers();
+//		System.out.println("隨機六個整數");
+//		for (int x = 0; x < a.length; x++) {
+//			System.out.println(a[x]);
+//		}
+//	}
+//}
+//
+//class luckyNumbers {
+//	int[] luckyNumbers() {
+//
+//		int[] y = new int[6];
+//		for (int x = 0; x < 6; x++) {
+//			y[x] = (int) (Math.random() * 42) + 1;
+//		}
+//
+//		return y;
+//	}
+
+	
+
+	 //------------Q5----------------------------
+//	public static void main(String[] args) {
+//		scan sc = new scan();
+//		
+//		sc.scan();
+//	}
+//}
+//
+//
+//class scan {
+//	String[] scan() {
+//		Scanner input = new Scanner(System.in);
+//		String[] name = new String[100];
+//		String[] su = new String[10];
+//		String x;
+//		int y = 0;
+//
+//		while (true) {
+//
+//			System.out.println("輸入內容。可輸入quit離開");
+//			x = input.nextLine();
+//			if ("quit".equals(x)) {
+//				su = Arrays.copyOf(name, y);
+//				break;
+//			} else {
+//				name[y] = x;
+//				y++;
+//			}
+//		}
+//		int sum = 0;
+//		int[] ar = new int[su.length];
+//
+//		for (int n = 0; n < su.length; n++) {
+//			sum += Integer.parseInt(su[n]);
+//			ar[n] = Integer.parseInt(su[n]);
+//		}
+//
+//		System.out.println("陣列總和" + sum);
+//		System.out.println("陣列平均" + sum / su.length);
+//
+//		Arrays.sort(ar);
+//		System.out.println("陣列最大值" + ar[ar.length - 1]);
+//		System.out.println("陣列最小值" + ar[0]);
+//
+//		return name;
+//	}
+
+	
+
+	//------------Q6----------------------------
+	public static void main(String[] args) {
+		CH06_6 uni = new CH06_6();// 
+		uni.toUnicodeString("張君雅");
+		uni.toUnicodeString("ABC");
+
+	}
+
+	public String toUnicodeString(String s) {
+		String s1 = s;
+		for (int i = 0; i < s1.length(); i++) {
+
+			int c = s1.charAt(i);// 轉換10進位
+			String s2 = Integer.toHexString(c);// 轉換16進位
+
+			switch (s2.length()) {// 根據字串傳回的個數在前面+\\n
+			case 1:
+				System.out.println("\\u000" + s2);
+				break;
+			case 2:
+				System.out.println("\\u00" + s2);
+				break;
+			case 3:
+				System.out.println("\\u0" + s2);
+				break;
+			case 4:
+				System.out.println("\\u" + s2);
+				break;
+			}
+		}
+		return s1; // 
+	}
+}
