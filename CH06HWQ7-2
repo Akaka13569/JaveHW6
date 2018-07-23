@@ -1,0 +1,61 @@
+//------------------Q07--------------------------
+package CH06;
+
+class MyRectangle {
+	double width;
+	double depth;
+	
+	public MyRectangle() {//一個類別一定要有一個預設建構子
+		
+	}
+	
+	public MyRectangle(double width, double depth){//建構子名稱一定要與類別同名
+		this.width = width;
+		this.depth = depth;
+	}
+	
+
+	void setWidth(double w) {
+		w = width;
+	}
+	void setDepth(double d) {
+		d = depth;
+	}
+	
+	double getArea() {
+		double area = width * depth;
+		return area;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(depth);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(width);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyRectangle other = (MyRectangle) obj;
+		if (Double.doubleToLongBits(depth) != Double.doubleToLongBits(other.depth))
+			return false;
+		if (Double.doubleToLongBits(width) != Double.doubleToLongBits(other.width))
+			return false;
+		return true;
+	}
+
+	
+	
+	
+}
