@@ -26,7 +26,8 @@ class MyRectangle {
 		double area = width * depth;
 		return area;
 	}
-
+	
+	//以下是第8題
 	@Override
 	public int hashCode() {
 		final int prime = 31;
